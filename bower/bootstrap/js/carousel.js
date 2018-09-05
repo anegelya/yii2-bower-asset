@@ -16,6 +16,7 @@
   var Carousel = function (element, options) {
     this.$element    = $(element)
     this.$indicators = this.$element.find('.carousel-indicators')
+    this.$previews   = this.$element.parent().find('.carousel-previews')
     this.options     = options
     this.paused      = null
     this.sliding     = null
@@ -138,6 +139,12 @@
     if (this.$indicators.length) {
       this.$indicators.find('.active').removeClass('active')
       var $nextIndicator = $(this.$indicators.children()[this.getItemIndex($next)])
+      $nextIndicator && $nextIndicator.addClass('active')
+    }
+    
+    if (this.$previews.length) {
+      this.$previews.find('.active').removeClass('active')
+      var $nextIndicator = $(this.$previews.children()[this.getItemIndex($next)])
       $nextIndicator && $nextIndicator.addClass('active')
     }
 
