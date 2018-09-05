@@ -212,6 +212,30 @@
   }
 }
 
+// Optional previews pics
+//
+// Add an unordered list with the following class and add a list item for each
+// slide your carousel holds.
+
+.carousel-previews {
+    display: flex;
+    list-style: none;
+  
+    li {
+        cursor: pointer;
+        padding: .5em;
+        border: 2px solid transparent;
+    }
+
+        img {
+            height: 100px;
+        }
+
+    .active {
+        border: 2px solid @link-color;
+    }
+  }
+
 // Optional captions
 // -----------------------------
 // Hidden by default for smaller viewports
